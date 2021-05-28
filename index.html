@@ -14,7 +14,7 @@
         <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/1/sdk.js"></script>
         <script type="text/javascript">
           function initializeWoff(woffId) {
-              alert('pre init : ' + woffId);
+
             woff
                 .init({
                     woffId: woffId
@@ -24,10 +24,10 @@
                          + '\r\ngetLanguage : ' + woff.getLanguage()
                          + '\r\ngetVersion : ' + woff.getVersion()
                          + '\r\ngetLineWorksVersion : ' + woff.getLineWorksVersion()
-                         + '\r\ngetProfile : ' + woff.getProfile()
+                         + '\r\ngetProfile().userId : ' + woff.getProfile().userId
+                         + '\r\ngetProfile().displayName : ' + woff.getProfile().displayName
                          + '\r\ngetAccessToken : ' + woff.getAccessToken()
                         );
-                
                 })
                 .catch((err) => {
                     console.log('WOFF Initialization failed ', err);
@@ -63,6 +63,6 @@
     </head>
     <body>
         <h2>hello! works!!</h2>
-        <button id="sendMessageButton">send</button>
+        <button id="sendMessageButton">send Message</button>
     </body>
 </html>
