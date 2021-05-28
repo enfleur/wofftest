@@ -49,6 +49,7 @@
                     content: 'Hello, World!'
                 }).then(function() {
                   window.alert('Message sent');
+                  woff.closeWindow()
                 }).catch(function(error) {
                   window.alert('Error sending message: ' + error);
                 });
