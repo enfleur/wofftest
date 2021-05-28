@@ -39,6 +39,14 @@
             var woffId = "CYvqEM9J-Xx5qb6vFlKUkw";
             initializeWoff(woffId);
             
+            woff.getProfile()
+            .then(profile => {
+              alert('displayName : ' + profile.displayName);
+            })
+            .catch((err) => {
+              console.log('error', err);
+            });
+
             document.getElementById('sendMessageButton').addEventListener('click', function() {
               if (!woff.isInClient()) {
                 sendAlertIfNoInClient();
