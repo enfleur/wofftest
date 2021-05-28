@@ -6,6 +6,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/1/sdk.js"></script>
         <script type="text/javascript">
+          function initializeWoff(woffId) {
+            woff
+                .init({
+                    woffId: woffId
+                })
+                .then(() => {
+                  // start to use LIFF's api
+                  initializeApp();
+                })
+                .catch((err) => {
+                    console.log('WOFF Initialization failed ', err);
+                });
+        }           
+            
         $(document).ready(function () {
 
             var woffId = "CYvqEM9J-Xx5qb6vFlKUkw";
@@ -26,20 +40,7 @@
               }
             });    
         })
-            
-        function initializeWoff(woffId) {
-            woff
-                .init({
-                    woffId: woffId
-                })
-                .then(() => {
-                  // start to use LIFF's api
-                  initializeApp();
-                })
-                .catch((err) => {
-                    console.log('WOFF Initialization failed ', err);
-                });
-        } 
+         
         </script>
           
 
