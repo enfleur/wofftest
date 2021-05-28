@@ -45,25 +45,13 @@
               } else {
                   alert('click event');
                   
-//                 woff.sendMessage({
-//                     content: 'Hello, World!'
-//                 }).then(function() {
-//                   window.alert('Message sent');
-//                 }).catch(function(error) {
-//                   window.alert('Error sending message: ' + error);
-//                 });
-woff.sendMessages([
-  {
-    type: 'text',
-    text: 'Hello, World!'
-  }
-])
-  .then(() => {
-    console.log('message sent!');
-  })
-  .catch((err) => {
-    console.log('error', err);
-  });
+                woff.sendMessage([{
+                    content: 'Hello, World!'
+                }]).then(function() {
+                  window.alert('Message sent');
+                }).catch(function(error) {
+                  window.alert('Error sending message: ' + error);
+                });
                   
               }
             });    
