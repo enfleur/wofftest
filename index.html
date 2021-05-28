@@ -45,9 +45,9 @@
               } else {
                   alert('click event');
                   
-                woff.sendMessage([{
+                woff.sendMessage({
                     content: 'Hello, World!'
-                }]).then(function() {
+                }).then(function() {
                   window.alert('Message sent');
                 }).catch(function(error) {
                   window.alert('Error sending message: ' + error);
