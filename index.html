@@ -24,7 +24,7 @@
                          + '\r\ngetLanguage : ' + woff.getLanguage()
                          + '\r\ngetVersion : ' + woff.getVersion()
                          + '\r\ngetLineWorksVersion : ' + woff.getLineWorksVersion()
-                         + '\r\ngetProfile().displayName : ' + woff.getProfile().displayName
+                         + '\r\ngetProfile().displayName : ' + woff.getProfile()
                          + '\r\ngetAccessToken : ' + woff.getAccessToken()
                         );
                 })
@@ -37,15 +37,8 @@
 
             var woffId = "CYvqEM9J-Xx5qb6vFlKUkw";
             initializeWoff(woffId);
-            
-             woff.getProfile()
-             .then(profile => {
-               window.alert('displayName : ' + profile.displayName);
-             })
-             .catch((err) => {
-               window.alert('error');
-             });
 
+            // 메시지 보내기 핸들러 등록
             document.getElementById('sendMessageButton').addEventListener('click', function() {
               if (!woff.isInClient()) {
                 sendAlertIfNoInClient();
