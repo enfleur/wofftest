@@ -55,7 +55,26 @@
                   
               }
             });    
-            
+ 
+            // 봇 메시지 보내기 핸들러 등록
+            document.getElementById('sendBotMessageButton').addEventListener('click', function() {
+              if (!woff.isInClient()) {
+                sendAlertIfNoInClient();
+              } else {          
+                woff.sendBotMessage({
+                    accountId : 'enfleur@nwetest.com',
+                    content: {
+                        type : 'text',
+                        text : 'Hello, World!'
+                    }
+                }).then(function() {
+                  window.alert('Bot Message sent');
+                }).catch(function(error) {
+                  window.alert('Error sending message: ' + error);
+                });
+                  
+              }
+            });    
             
             // 창닫기 핸들러 등록
             document.getElementById('closeWindowButton').addEventListener('click', function() {
@@ -79,6 +98,7 @@
     <body>
         <h2>hello! works!!</h2>
         <button id="sendMessageButton">send Message</button>
+        <button id="sendBotMessageButton">send Bot Message</button>
         <button id="closeWindowButton">close Window</button>
         <button id="openWindowButton">open Window</button>        
     </body>
