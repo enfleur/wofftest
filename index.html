@@ -24,6 +24,7 @@
                          + '\r\ngetLanguage : ' + woff.getLanguage()
                          + '\r\ngetVersion : ' + woff.getVersion()
                          + '\r\ngetLineWorksVersion : ' + woff.getLineWorksVersion()
+                         + '\r\ngetProfile : ' + woff.getProfile()
                          + '\r\ngetAccessToken : ' + woff.getAccessToken()
                         );
                 
@@ -44,10 +45,9 @@
               } else {
                   alert('click event');
                   
-                woff.sendMessages([{
-                  'type': 'text',
-                  'text': "Hello, Works!"
-                }]).then(function() {
+                woff.sendMessages({
+                    content: 'Hello, World!'
+                }).then(function() {
                   window.alert('Message sent');
                 }).catch(function(error) {
                   window.alert('Error sending message: ' + error);
