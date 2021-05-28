@@ -20,8 +20,12 @@
                     woffId: woffId
                 })
                 .then(() => {
-                   alert('inited woff.getOS() : ' + woff.getOS());
-
+                   alert('inited woff\r\ngetOS : ' + woff.getOS()
+                         + '\r\ngetLanguage : ' + woff.getLanguage()
+                         + '\r\ngetVersion : ' + woff.getVersion()
+                         + '\r\ngetLineWorksVersion : ' + woff.getLineWorksVersion()
+                         + '\r\ngetAccessToken : ' + woff.getAccessToken()
+                        );
                 
                 })
                 .catch((err) => {
