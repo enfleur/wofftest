@@ -24,7 +24,7 @@
                          + '\r\ngetLanguage : ' + woff.getLanguage()
                          + '\r\ngetVersion : ' + woff.getVersion()
                          + '\r\ngetLineWorksVersion : ' + woff.getLineWorksVersion()
-                         + '\r\ngetProfile().userId : ' + woff.getProfile().userId
+                         + '\r\ngetProfile().userId : ' + woff.getProfile().then(profile => {return profile.displayName})
                          + '\r\ngetProfile().displayName : ' + woff.getProfile().displayName
                          + '\r\ngetAccessToken : ' + woff.getAccessToken()
                         );
@@ -39,13 +39,13 @@
             var woffId = "CYvqEM9J-Xx5qb6vFlKUkw";
             initializeWoff(woffId);
             
-            woff.getProfile()
-            .then(profile => {
-              alert('displayName : ' + profile.displayName);
-            })
-            .catch((err) => {
-              alert('error');
-            });
+//             woff.getProfile()
+//             .then(profile => {
+//               alert('displayName : ' + profile.displayName);
+//             })
+//             .catch((err) => {
+//               alert('error');
+//             });
 
             document.getElementById('sendMessageButton').addEventListener('click', function() {
               if (!woff.isInClient()) {
