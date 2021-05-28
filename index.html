@@ -55,10 +55,6 @@
               }
             });    
             
-            // 창닫기 핸들러 등록
-            document.getElementById('sendMessageButton').addEventListener('click', function() {
-                woff.closeWindow();
-            });  
             
             // 창닫기 핸들러 등록
             document.getElementById('closeWindowButton').addEventListener('click', function() {
@@ -68,8 +64,8 @@
             // 창열기 핸들러 등록
             document.getElementById('openWindowButton').addEventListener('click', function() {
                 woff.openWindow({
-                  url: "https://developers.worksmobile.com",
-                  external: true
+                  url: "https://line.worksmobile.com/jp/",
+                  external: false
                 });
             });                   
         })
